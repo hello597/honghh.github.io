@@ -2,19 +2,19 @@ const myImage = document.querySelector("img");
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 function setUserName() {
-  const myName = prompt("Please enter your name.");
+  const myName = prompt("请输入你的名字。");
   if (!myName) {
     setUserName();
   } else {
     localStorage.setItem("name", myName);
-    myHeading.textContent = `Mozilla is cool, ${myName}`;
+    myHeading.textContent = `欢迎光临, ${myName}`;
   }
 }
 if (!localStorage.getItem("name")) {
   setUserName();
 } else {
   const storedName = localStorage.getItem("name");
-  myHeading.textContent = `Mozilla is cool, ${storedName}`;
+  myHeading.textContent = `欢迎光临, ${storedName}`;
 }
 myButton.onclick = function () {
   setUserName();
